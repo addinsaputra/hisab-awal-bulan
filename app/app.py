@@ -9,20 +9,20 @@ app = typer.Typer()
 
 
 @app.command()
-def buat_tempat():
+def creat_loc():
     """
     Untuk Membuat Dan Menambahkan Data Tempat Baru Ke Database
-    Gunakan Comand: python3 app.py buat-tempat
+    Gunakan Comand: python app/app.py creat-loc
     """
     view_tambah = viewcreat.ViewCreat()
     view_tambah.tambah_data()
 
 
 @app.command()
-def tampil_all_tempat():
+def displayall_loc():
     """
     Untuk Menampilkan Seluruh Data Tempat Yang Tersimpan
-    Gunakan Comand: python3 app.py tampil-all-tempat
+    Gunakan Comand: python app/app.py displayall-loc
     """
 
     lihat_data = read.Read()
@@ -30,37 +30,37 @@ def tampil_all_tempat():
 
 
 @app.command()
-def cari_tempat(nama: str):
+def search_loc(nama: str):
     """
     Untuk Mencari Data Tempat
-    Gunakan Comand: python3 app.py cari-tempat "nama tempat"
+    Gunakan Comand: python app/app.py search-loc "nama tempat"
     """
     select_data = select.Select()
     select_data.pilih_tempat(nama)
 
 
 @app.command()
-def update_tempat(nama_tempat: str):
+def update_loc(nama_tempat: str):
     """
     Untuk Memperbaharui Data Tempat
-    Gunakan Comand: python3 app.py update-tempat "nama tempat"
+    Gunakan Comand: python app/app.py update-loc "nama tempat"
     """
     perbaharui_data = updatedata.UpdateData()
     perbaharui_data.update_data(nama_tempat)
 
 
 @app.command()
-def delete_tempat(nama_tempat: str):
+def delete_loc(nama_tempat: str):
     """
     Untuk Menghapus Data Tempat
-    Gunakan Comand: python3 app.py delete-tempat "nama tempat"
+    Gunakan Comand: python app/app.py delete-loc "nama tempat"
     """
     hapus_data = Delete()
     hapus_data.hapus_tempat(nama_tempat)
 
 
 @app.command()
-def lihat_data_astronomi(
+def view_astro(
     nama: str,
     bulan: str,
     tahun: int,
@@ -73,14 +73,14 @@ def lihat_data_astronomi(
 ):
     """
     Untuk Melihat Data Astronomi Hilal
-    Gunakan Comand: python3 app.py lihat-data-astronomi "nama tempat" "bulan hijriah" tahun hijriah -b (sebelum berapa menit) -a sesudah berapa menit)
+    Gunakan Comand: python app/app.py view-astro "nama tempat" "bulan hijriah" tahun hijriah -b (sebelum berapa menit) -a sesudah berapa menit)
     """
     pilihan = main.TampilData()
     pilihan.pilih_main(nama, bulan, tahun, before, after)
 
 
 @app.command()
-def print_data_astronomi(
+def print_astro(
     nama: str,
     bulan: str,
     tahun: int,
@@ -93,7 +93,7 @@ def print_data_astronomi(
 ):
     """
     Untuk Mencetak Data Astronomi Hilal ke Bentuk PDF
-    Gunakan Comand: python3 app.py print-data-astronomi "nama tempat" "bulan hijriah" tahun hijriah -b (sebelum berapa menit) -a sesudah berapa menit)
+    Gunakan Comand: python app/app.py print-astro "nama tempat" "bulan hijriah" tahun hijriah -b (sebelum berapa menit) -a sesudah berapa menit)
     """
 
     cetak = print.PrintData()
@@ -101,7 +101,7 @@ def print_data_astronomi(
 
 
 @app.command()
-def lihat_tanggal(
+def view_date(
     nama: str,
     tanggal: int,
     bulan: int,
@@ -115,7 +115,7 @@ def lihat_tanggal(
 ):
     """
      Untuk Melihat Data Astronomi Hilal Pertanggal
-    Gunakan Comand: python3 app.py lihat-tanggal "nama tempat" tanggal bulan tahun -b (sebelum berapa menit) -a sesudah berapa menit)
+    Gunakan Comand: python app/app.py view-date "nama tempat" tanggal bulan tahun -b (sebelum berapa menit) -a sesudah berapa menit)
     """
 
     pertanggal = TanggalData()
@@ -123,7 +123,7 @@ def lihat_tanggal(
 
 
 @app.command()
-def print_tanggal(
+def print_date(
     nama: str,
     tanggal: int,
     bulan: int,
@@ -136,7 +136,7 @@ def print_tanggal(
     ),
 ):
     """Untuk Mencetak Data Astronomi Hilal Pertanggal Masehi
-    Gunakan Comand: python3 app.py lihat-tanggal "nama tempat" tanggal bulan tahun -b (sebelum berapa menit) -a sesudah berapa menit)
+    Gunakan Comand: python app/app.py lihat-tanggal "nama tempat" tanggal bulan tahun -b (sebelum berapa menit) -a sesudah berapa menit)
     """
 
     print_pertanggal = PrintTanggalData()
