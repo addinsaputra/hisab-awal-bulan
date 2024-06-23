@@ -77,11 +77,19 @@ class DataCalculator:
 
             # elongasi bulan
             elongasi = sun_posisi_obs.separation_from(moon_posisi_obs)
+            degree_el, menit_el, second_el = Angle.dms(elongasi)
+
             # ilumination bulan
             ilumination = almanac.fraction_illuminated(self.eph, "moon", t) * 100
 
             def format_dms(degrees):
-                return Angle(degrees=degrees).dstr(places=3)
+                sign = -1 if degrees < 0 else 1
+                decimal_degrees = abs(degrees)
+                degrees = int(decimal_degrees) * sign
+                minutes = int((decimal_degrees - abs(degrees)) * 60)
+                seconds = (decimal_degrees - abs(degrees) - minutes / 60) * 3600
+
+                return f"{degrees}° {minutes}' {seconds:.2f}\""
 
             # masukan data
             self.data["Jam"].append(f"{time.strftime('%H:%M')}")
@@ -89,7 +97,9 @@ class DataCalculator:
             self.data["Azimut Sun"].append(f"{format_dms(azimut_sun)}")
             self.data["Altitude Moon"].append(f"{format_dms(altitude_moon)}")
             self.data["Azimut Moon"].append(f"{format_dms(azimut_moon)}")
-            self.data["Elongasi"].append(f"{elongasi}")
+            self.data["Elongasi"].append(
+                f"{round(degree_el)}° {round(menit_el)}' {second_el:.2f}\""
+            )
             self.data["Ilumination"].append(f"{round(ilumination, 3)}%")
 
             current_time += timedelta(minutes=1)

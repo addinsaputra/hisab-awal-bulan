@@ -11,7 +11,7 @@ class Database:
             connection = sqlite3.connect(self.DATABASE_FILE)
             return connection
         except Error as e:
-            print(e)
+            print(f" Data Tidak tersedia buat data tempat terlebih dahulu {e}")
 
         return connection
 
