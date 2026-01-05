@@ -19,7 +19,7 @@ app = typer.Typer(
     help=ceter_text(
         "Aplikasi Hilal Tracker\n\n"
         "Aplikasi ini diperuntukan untuk mendapatkan Data Hilal Permenit\n\n"
-        "Daftar Nama Bulan Hijriah:\n\n - Muhharam \n\n - Safar \n\n - Rabiul Awal \n\n - Rabiul Akhir \n\n - Jumadil Ul        a \n\n - Jumadil Akhir \n\n - Rajab \n\n - Syaban \n\n - Ramadhan \n\n - Syawal \n\n - Zulkaidah \n\n - Zulhijah         \n\n !!! PERINGATAN !!! \n\n Perhartikan setiap hurufnya dan command yang digunakan"
+        "Daftar Nama Bulan Hijriah:\n\n - Muharram \n\n - Safar \n\n - Rabiul Awal \n\n - Rabiul Akhir \n\n - Jumadil Ula \n\n - Jumadil Akhir \n\n - Rajab \n\n - Syaban \n\n - Ramadhan \n\n - Syawal \n\n - Zulkaidah \n\n - Zulhijah         \n\n !!! PERINGATAN !!! \n\n Perhartikan setiap hurufnya dan command yang digunakan"
     )
 )
 

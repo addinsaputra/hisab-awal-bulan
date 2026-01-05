@@ -1,4 +1,5 @@
 from skyfield.api import load, Topos, Angle
+import os
 from skyfield import almanac
 from datetime import timedelta, timezone, datetime
 import pandas as pd
@@ -7,7 +8,9 @@ import pandas as pd
 class DataCalculator:
     def __init__(self):
         self.ts = load.timescale()
-        self.eph = load("de421.bsp")
+        base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+        eph_path = os.path.join(base_dir, 'de440.bsp')
+        self.eph = load(eph_path)
         self.earth, self.sun, self.moon = (
             self.eph["earth"],
             self.eph["sun"],
