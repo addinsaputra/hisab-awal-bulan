@@ -45,3 +45,7 @@ class TanggalIndonesia:
 
         return nama_hari_indonesia_res, nama_bulan_indonesia_res
 
+
+if __name__ == "__main__":
+    print("namahari_bulan.py: ready")
+

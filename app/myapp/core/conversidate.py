@@ -23,4 +23,8 @@ class Konversi:
             return e
 
 
+if __name__ == "__main__":
+    print("conversidate.py: ready")
+
+
 

@@ -31,3 +31,7 @@ class DataIjtimak:
         s = int(t_utc_iso[17:19])
 
         return y, mo, d, ho, mi, s
+
+
+if __name__ == "__main__":
+    print("ijtima.py: ready")

@@ -38,3 +38,7 @@ class Jamghurub:
         minute = int(sunrise[14:16])
         second = int(sunrise[17:19])
         return year, month, day, hour, minute, second
+
+
+if __name__ == "__main__":
+    print("jamghurub.py: ready")

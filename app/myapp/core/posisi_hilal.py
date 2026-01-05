@@ -85,3 +85,7 @@ class PosisisHilal:
             adust_date_time.minute,
             adust_date_time.second,
         )
+
+
+if __name__ == "__main__":
+    print("posisi_hilal.py: ready")

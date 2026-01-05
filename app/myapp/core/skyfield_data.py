@@ -105,3 +105,7 @@ class DataCalculator:
             current_time += timedelta(minutes=1)
 
         return pd.DataFrame(self.data)
+
+
+if __name__ == "__main__":
+    print("skyfield_data.py: ready")

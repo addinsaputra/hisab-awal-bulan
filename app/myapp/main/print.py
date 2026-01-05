@@ -34,7 +34,7 @@ class PrintData:
 
             def konversi_bulan(nama_bulan: str):
                 bulan_hijri = {
-                    "Muhharam": 1,
+                    "Muharram": 1,
                     "Safar": 2,
                     "Rabiul Awal": 3,
                     "Rabiul Akhir": 4,
@@ -190,5 +190,5 @@ class PrintData:
         except Exception as e:
             console = Console()
             console.print(
-                "[red]!!! Terjadi Kesalahan Silakan Periksa penulisan Comand line !!! [/red]"
+                f"[red]!!! Terjadi Kesalahan Silakan Periksa penulisan Comand line !!! Error: {e}[/red]"
             )
