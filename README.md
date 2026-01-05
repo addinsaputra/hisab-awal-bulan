@@ -47,10 +47,15 @@ mkdir data-astronomi
 cd data-astronomi
 git clone https://github.com/Sendyardy/data-astronomi-hilal.git
 cd data-astronomi-hilal
-.\venv\bin\activate
+.\venv\Scripts\activate
 pip install -r pakage.txt
 python app\app.py --help
+
+
+
+
 ```
+
 
 
 
